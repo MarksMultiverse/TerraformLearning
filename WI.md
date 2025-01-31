@@ -1,0 +1,1 @@
+az login --tenant f9e8c7b9-8b42-4ce8-9473-6cd1d79a5db5
