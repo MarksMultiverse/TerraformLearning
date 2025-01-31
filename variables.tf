@@ -20,19 +20,14 @@ variable "vnet_name" {
 variable "subnet_names" {
   type        = list(string)
   description = "The names of the subnets"
-  default     = ["subnet1", "subnet2"]
+  default     = ["infra", "vms", "image"]
 }
 
-variable "nsg1_name" {
-  type        = string
-  description = "The name of the first network security group"
-  default     = "nsg1"
-}
 
-variable "nsg2_name" {
-  type        = string
-  description = "The name of the second network security group"
-  default     = "nsg2"
+variable "nsg_name" {
+  type        = list(string)
+  description = "The names of the network security groups"
+  default     = ["nsg1", "nsg2", "nsg3"]
 }
 
 variable "vnet_address_space" {
@@ -44,7 +39,7 @@ variable "vnet_address_space" {
 variable "subnet_address_prefixes" {
   type        = list(string)
   description = "The address prefixes of the subnets"
-  default     = ["10.0.1.0/24", "10.0.2.0/24"]
+  default     = ["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]
 }
 
 variable "Project" {
@@ -60,7 +55,7 @@ variable "Responsible" {
 }
 
 variable "network_rg_name" {
-  type        = string
-  description = "The name of the resource group for the network resources"
-  default     = "mark-testRG1"
+  type        = list(string)
+  description = "The names of the resource groups for the resources"
+  default     = ["mark-testRG1", "mark-testRG2", "mark-testRG3", "mark-testRG4"]
 }
