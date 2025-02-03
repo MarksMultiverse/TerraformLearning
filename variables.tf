@@ -33,7 +33,7 @@ variable "nsg_name" {
 variable "vnet_address_space" {
   type        = string
   description = "The address space of the virtual network"
-  default     = ["10.0.0.0/16"]
+  default     = "10.0.0.0/16"
 }
 
 variable "subnet_address_prefixes" {
@@ -54,7 +54,7 @@ variable "Responsible" {
   default     = "mark.tilleman@cegeka.com"
 }
 
-variable "network_rg_name" {
+variable "rg_name" {
   type        = list(string)
   description = "The names of the resource groups for the resources"
   default     = ["mark-testRG1", "mark-testRG2", "mark-testRG3", "mark-testRG4"]
