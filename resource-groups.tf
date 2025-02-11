@@ -1,10 +1,3 @@
-# PROVIDERS
-
-provider "azurerm" {
-  features {}
-  subscription_id = var.subscription_id
-}
-
 resource "azurerm_resource_group" "network" {
   name     = var.rg_name[0]
   location = var.location
