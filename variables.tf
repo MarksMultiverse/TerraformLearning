@@ -23,6 +23,11 @@ variable "subnet_names" {
   default     = ["infra", "vms", "image"]
 }
 
+variable "subnet_count" {
+  type        = number
+  description = "The number of subnets to create"
+  default     = 3
+}
 
 variable "nsg_name" {
   type        = list(string)
@@ -36,11 +41,11 @@ variable "vnet_address_space" {
   default     = "10.0.0.0/16"
 }
 
-variable "subnet_address_prefixes" {
-  type        = list(string)
-  description = "The address prefixes of the subnets"
-  default     = ["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]
-}
+# variable "subnet_address_prefixes" {
+#   type        = list(string)
+#   description = "The address prefixes of the subnets"
+#   default     = ["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]
+# }
 
 variable "Project" {
   type        = string
@@ -58,4 +63,16 @@ variable "rg_name" {
   type        = list(string)
   description = "The names of the resource groups for the resources"
   default     = ["mark-testRG1", "mark-testRG2", "mark-testRG3", "mark-testRG4"]
+}
+
+variable "naming_prefix" {
+  type        = string
+  description = "The prefix to use for naming the resources"
+  default     = "mark"
+}
+
+variable "environment" {
+  type        = string
+  description = "The environment to deploy the resources"
+  default     = "dev"
 }
